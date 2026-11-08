@@ -1,0 +1,9 @@
+{
+  "id": "DISRUPT-003",
+  "title": "Flight identifier not found during rebooking",
+  "description": "A rebooking request refers to flight ID FL-999, which does not match a flight in the simulated dataset. The request cannot be processed.",
+  "date": "2026-11-01T09:10:00Z",
+  "correlation_id": "corr-003",
+  "observed_result": "The engine reports that flight ID FL-999 is unknown.",
+  "expected_result": "The engine should report the unknown flight ID clearly and avoid attempting rebooking."
+}

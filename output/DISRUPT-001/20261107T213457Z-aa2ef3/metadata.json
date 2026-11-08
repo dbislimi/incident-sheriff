@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "run_id": "20261107T213457Z-aa2ef3",
+  "ticket_id": "DISRUPT-001",
+  "ticket_file": "data/tickets/DISRUPT-001.json",
+  "started_at": "2026-11-07T21:34:57.799230Z",
+  "finished_at": "2026-11-07T21:36:59.852409Z",
+  "status": "completed",
+  "model": {
+    "name": "qwen3.5:4b-16k",
+    "temperature": 0.3
+  },
+  "logs": {
+    "limit": 10,
+    "offset": 0,
+    "selected_count": 4,
+    "truncated": false
+  },
+  "steps": {
+    "triage": {
+      "status": "completed",
+      "duration_seconds": 78.78612138600056,
+      "audit_warnings": [],
+      "error": null,
+      "error_type": null
+    },
+    "test_generation": {
+      "status": "completed",
+      "duration_seconds": 43.24581370699889,
+      "audit_warnings": [],
+      "error": null,
+      "error_type": null
+    }
+  },
+  "artifacts": [
+    "triage.json",
+    "rebooking_test.cpp",
+    "compilation.log",
+    "test_generation.json"
+  ],
+  "failed_step": null,
+  "error": null,
+  "error_type": null
+}

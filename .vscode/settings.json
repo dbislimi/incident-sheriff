@@ -1,0 +1,12 @@
+{
+  "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+  "C_Cpp.default.cppStandard": "c++23",
+  "C_Cpp.default.intelliSenseMode": "linux-clang-x64",
+  "C_Cpp.default.compilerArgs": [
+    "-std=c++23"
+  ],
+  "files.associations": {
+    "*.hpp": "cpp"
+},
+"cmake.sourceDirectory": "${workspaceFolder}/cpp"
+}

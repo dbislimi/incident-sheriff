@@ -1,0 +1,40 @@
+{
+  "category": "Data",
+  "severity": 3,
+  "suspected_function": null,
+  "facts": [
+    {
+      "description": "A rebooking request was received for flight ID FL-999.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "description",
+          "line": null
+        },
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "description": "FlightRepository reported that flight ID FL-999 was not found in the repository.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 12
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    "The flight ID FL-999 provided in the request does not exist in the system's flight repository.",
+    "sources_for_hypothesis_1: [\"data/logs/rebooking.log\", line 12]"
+  ],
+  "missing_information": [
+    "Whether this flight ID error is isolated to this request or indicates a broader data inconsistency.",
+    "Confirmation if other requests with similar flight IDs are failing."
+  ]
+}

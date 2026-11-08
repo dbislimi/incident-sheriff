@@ -1,0 +1,65 @@
+{
+  "category": "BusinessLogic",
+  "severity": 3,
+  "suspected_function": null,
+  "facts": [
+    {
+      "description": "Request corr-001 received for cancelled flight AF123.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "description",
+          "line": null
+        },
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "description": "Flight AF456 identified as candidate with available seats and correct route/time.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "description",
+          "line": null
+        },
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "description": "Flight AF456 rejected by eligibility filter.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "description": "Result returned is NO_ALTERNATIVE.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 4
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    "The eligibility filter logic contains a bug that excludes flights meeting the documented PoC business rules.",
+    "There is an undocumented constraint within the eligibility filter causing AF456 to be rejected."
+  ],
+  "missing_information": [
+    "The specific reason for rejection provided by the eligibility filter.",
+    "Whether other flights were considered or if only AF456 was found as a candidate."
+  ]
+}

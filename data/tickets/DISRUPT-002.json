@@ -1,0 +1,9 @@
+{
+  "id": "DISRUPT-002",
+  "title": "Alternative flight search times out",
+  "description": "After flight AF210 was cancelled, the search for an alternative timed out. No alternative was returned. The underlying cause of the timeout is not known.",
+  "date": "2026-11-01T09:05:00Z",
+  "correlation_id": "corr-002",
+  "observed_result": "The search timed out without returning an alternative.",
+  "expected_result": "The user should receive available alternatives or a clear error if the search cannot be completed."
+}

@@ -1,0 +1,60 @@
+{
+  "category": "BusinessLogic",
+  "severity": 3,
+  "suspected_function": null,
+  "facts": [
+    {
+      "description": "Flight AF456 was identified as a candidate with origin CDG, destination FCO, departure 2026-11-03T14:00:00Z, and 2 available seats.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "description": "Flight AF456 meets the PoC eligibility criteria (same origin, same destination, later departure time, available seats) based on ticket description and log data.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "description",
+          "line": null
+        },
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "description": "Candidate flight AF456 was rejected by the eligibility filter.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "description": "The rebooking engine returned result NO_ALTERNATIVE.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 4
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    "The eligibility filter logic applied stricter constraints than the documented PoC business rules.",
+    "There is a bug in the eligibility check logic that incorrectly marked AF456 as ineligible."
+  ],
+  "missing_information": [
+    "Specific criteria used by the eligibility filter that led to rejection of AF456.",
+    "Implementation details or code responsible for the eligibility filter logic."
+  ]
+}

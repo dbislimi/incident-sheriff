@@ -1,0 +1,51 @@
+{
+  "category": "Data",
+  "severity": 3,
+  "suspected_function": "FlightRepository",
+  "facts": [
+    {
+      "description": "The rebooking engine received a request for flight ID FL-999.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "description",
+          "line": null
+        },
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "description": "The FlightRepository reported that flight ID FL-999 was not found in the dataset.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "description": "The rebooking request could not be processed due to the missing flight identifier.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "description",
+          "line": null
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    "The input ticket contains an invalid or non-existent flight ID (FL-999).",
+    "The FlightRepository does not contain a record for FL-999 in the simulated dataset."
+  ],
+  "missing_information": [
+    "Confirmation of whether flight ID FL-999 is expected to exist in the system.",
+    "Logs or context indicating if this request was generated with valid input data.",
+    "Evidence of other requests failing for similar reasons to assess scope."
+  ]
+}

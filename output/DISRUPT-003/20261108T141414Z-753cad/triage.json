@@ -1,0 +1,56 @@
+{
+  "category": "Unknown",
+  "severity": 3,
+  "suspected_function": "FlightRepository",
+  "facts": [
+    {
+      "description": "Rebooking request received for flight ID FL-999.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "description",
+          "line": null
+        },
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "description": "FlightRepository reported flight ID FL-999 not found.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "description": "Engine reported flight ID FL-999 is unknown and did not search for alternatives.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "observed_result",
+          "line": null
+        },
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 12
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    "Flight ID FL-999 was invalid or does not exist in the simulated dataset.",
+    "There is a data mismatch between the request input and the flight repository."
+  ],
+  "missing_information": [
+    "Whether flight ID FL-999 was expected to exist in the dataset.",
+    "Any logs indicating prior data load or synchronization issues.",
+    "Confirmation of whether this is a user input error or a system data issue."
+  ]
+}

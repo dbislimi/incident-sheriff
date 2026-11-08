@@ -1,0 +1,9 @@
+[Project root redacted from historical log]
+$ cmake -S <project-root>/cpp -B <project-root>/cpp/build -DTEST_SOURCE_FILE=<project-root>/output/DISRUPT-001/20261107T213457Z-aa2ef3/rebooking_test.cpp -DDISCOVER_TESTS=OFF
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: <project-root>/cpp/build
+$ cmake --build <project-root>/cpp/build
+[ 33%] Building CXX object CMakeFiles/rebooking_tests.dir<project-root>/output/DISRUPT-001/20261107T213457Z-aa2ef3/rebooking_test.cpp.o
+[ 66%] Linking CXX executable rebooking_tests
+[100%] Built target rebooking_tests

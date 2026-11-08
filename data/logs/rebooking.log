@@ -1,0 +1,12 @@
+2026-11-01T09:00:00Z INFO  [RebookingEngine] correlation_id=corr-001 received request flight=AF123 status=CANCELLED
+2026-11-01T09:00:01Z INFO  [RebookingEngine] correlation_id=corr-001 candidate flight=AF456 origin=CDG destination=FCO departure=2026-11-03T14:00:00Z available_seats=2
+2026-11-01T09:00:01Z WARN  [RebookingEngine] correlation_id=corr-001 candidate flight=AF456 rejected by eligibility filter
+2026-11-01T09:00:02Z INFO  [RebookingEngine] correlation_id=corr-001 result=NO_ALTERNATIVE
+2026-11-01T09:03:00Z INFO  [RebookingEngine] correlation_id=corr-noise-101 received request flight=AF987 status=CANCELLED
+2026-11-01T09:03:01Z INFO  [RebookingEngine] correlation_id=corr-noise-101 result=ALTERNATIVE_FOUND flight=AF988
+2026-11-01T09:05:00Z INFO  [RebookingEngine] correlation_id=corr-002 received request flight=AF210 status=CANCELLED
+2026-11-01T09:05:01Z INFO  [RouteSearch] correlation_id=corr-002 searching alternatives flight=AF210
+2026-11-01T09:05:11Z ERROR [RouteSearch] correlation_id=corr-002 alternative search timed out after 10000ms
+2026-11-01T09:07:00Z WARN  [RouteSearch] correlation_id=corr-noise-102 retrying unrelated request flight=AF777
+2026-11-01T09:10:00Z INFO  [RebookingEngine] correlation_id=corr-003 received request flight_id=FL-999
+2026-11-01T09:10:01Z ERROR [FlightRepository] correlation_id=corr-003 flight_id=FL-999 not found

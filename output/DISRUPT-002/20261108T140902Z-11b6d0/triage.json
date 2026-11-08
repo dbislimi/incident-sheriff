@@ -1,0 +1,57 @@
+{
+  "category": "Unknown",
+  "severity": 3,
+  "suspected_function": "RouteSearch",
+  "facts": [
+    {
+      "description": "Request received for cancelled flight AF210.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "description": "RouteSearch initiated alternative search.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "description": "Alternative search timed out after 10000ms.",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "description": "Observed result was a timeout without alternative returned.",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "observed_result",
+          "line": null
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    "Backend flight availability service was slow or unresponsive.",
+    "RouteSearch logic encountered an error causing a hang.",
+    "Network latency between components was high."
+  ],
+  "missing_information": [
+    "Logs from the backend service called by RouteSearch.",
+    "Network latency metrics for correlation corr-002.",
+    "Confirmation if this is a recurring issue."
+  ]
+}

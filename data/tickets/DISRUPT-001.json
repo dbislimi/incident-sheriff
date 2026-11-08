@@ -1,0 +1,9 @@
+{
+  "id": "DISRUPT-001",
+  "title": "Alternative flight not proposed after cancellation",
+  "description": "Flight AF123 from Paris CDG to Rome FCO, scheduled for 2026-11-03 at 10:00 UTC, was cancelled. Flight AF456 serves the same route at 14:00 UTC and has two available seats, but the rebooking engine returns no alternative.",
+  "date": "2026-11-01T09:00:00Z",
+  "correlation_id": "corr-001",
+  "observed_result": "No alternative flight was proposed.",
+  "expected_result": "Flight AF456 should be proposed."
+}

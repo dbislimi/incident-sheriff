@@ -1,0 +1,60 @@
+{
+  "category": "Unknown",
+  "severity": 3,
+  "suspected_function": "RouteSearch",
+  "facts": [
+    {
+      "description": "Flight AF210 was cancelled",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "description",
+          "line": null
+        }
+      ]
+    },
+    {
+      "description": "Alternative flight search was initiated for correlation corr-002",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "description": "The alternative search timed out after 10000ms (10 seconds)",
+      "sources": [
+        {
+          "kind": "log",
+          "reference": "data/logs/rebooking.log",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "description": "No alternative flight was returned to the user",
+      "sources": [
+        {
+          "kind": "ticket",
+          "reference": "observed_result",
+          "line": null
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    "Network latency or timeout in the RouteSearch service causing the search to exceed the 10-second threshold",
+    "The search algorithm is performing a complex query that exceeds acceptable response time",
+    "Insufficient alternative flights meet the business rules constraints (same airport, after departure, available seats)",
+    "Database performance issues affecting route search queries"
+  ],
+  "missing_information": [
+    "Whether this timeout pattern occurred for other cancelled flights or only AF210",
+    "Additional logs showing RouteSearch query execution time and any error messages",
+    "Confirmation of whether alternatives were actually available in the system at the time",
+    "Network diagnostics to determine if the issue is client-side or server-side",
+    "Whether this incident affected other passengers with similar search requests"
+  ]
+}
